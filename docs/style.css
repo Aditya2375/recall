@@ -136,7 +136,7 @@ button:disabled { opacity: 0.5; cursor: default; }
 .term-table { border-collapse: collapse; margin-top: 8px; font-family: var(--mono); font-size: 12px; }
 .term-table th, .term-table td { border: 1px solid var(--border); padding: 3px 8px; text-align: right; }
 .term-table th { color: var(--dim); font-weight: 400; }
-.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px; }
 .compare-col { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
 .compare-col h4 { margin: 0 0 8px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
 .compare-col ol { margin: 0; padding-left: 22px; }
