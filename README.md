@@ -133,7 +133,7 @@ browser's IndexedDB.
 npm ci
 npm run build                  # typecheck + compile core and web
 npm test                       # 73 unit tests
-node tests/browser-smoke.mjs   # 8 end-to-end checks in headless Chrome
+node tests/browser-smoke.mjs   # 9 end-to-end checks in headless Chrome
 node scripts/evaluate.mjs      # prints the metrics table above
 node scripts/precompute.mjs    # regenerate the bundled model artifacts
 node scripts/verify-precomputed.mjs  # fails if the artifacts drifted

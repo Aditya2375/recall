@@ -106,6 +106,29 @@ await new Promise((r) => setTimeout(r, 1500));
 const xss = await evaluate(`window.__xss === 1`);
 check('query text cannot inject markup', !xss);
 
+// Uploaded corpus with a hostile title must render as inert text too, and the
+// whole upload -> index -> search path must work (live model not required for
+// BM25-only search).
+const hostile = JSON.stringify({
+  version: 1, name: 'hostile-test',
+  docs: [
+    { id: 'a1', title: xssProbe + ' Zebra astronomy', text: 'Zebras are not astronomy, but this doc mentions quasars and pulsars for ranking.' },
+    { id: 'b2', title: 'Plain doc', text: 'Pulsars spin rapidly and emit beams of radio waves.' },
+  ],
+});
+await evaluate(`(() => {
+  const input = document.querySelector('#upload-input');
+  const dt = new DataTransfer();
+  dt.items.add(new File([${JSON.stringify(hostile)}], 'hostile.json', { type: 'application/json' }));
+  input.files = dt.files;
+  input.dispatchEvent(new Event('change', { bubbles: true }));
+})()`);
+await waitFor(() => evaluate(`document.querySelector('#corpus-picker')?.textContent.includes('hostile-test')`), 'hostile corpus import');
+await evaluate(`(() => { document.querySelector('#mode-controls input[value="bm25"]').click(); const q = document.querySelector('#query'); q.value = 'pulsars'; document.querySelector('#run').click(); })()`);
+await waitFor(() => evaluate(`document.querySelector('#results > li .title')?.textContent.includes('Plain doc')`), 'search over uploaded corpus');
+const xss2 = await evaluate(`window.__xss === 1`);
+check('uploaded corpus works and its title cannot inject markup', !xss2);
+
 check('no page exceptions during the whole run', consoleErrors.length === 0, consoleErrors[0] ?? '');
 
 const failed = checks.filter((c) => !c.ok);

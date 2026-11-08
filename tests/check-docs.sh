@@ -8,7 +8,7 @@ fail() { echo "check-docs: $1" >&2; exit 1; }
 UNIT=$(npm test 2>&1 | grep -o '^# pass [0-9]*' | grep -o '[0-9]*')
 [ "$UNIT" = "73" ] || fail "unit tests: README says 73, runner says $UNIT"
 grep -q "73 unit tests" README.md || fail "README no longer says 73 unit tests"
-grep -q "8 end-to-end checks" README.md || fail "README lost the smoke check count"
+grep -q "9 end-to-end checks" README.md || fail "README lost the smoke check count"
 grep -q "aditya2375.github.io/recall" README.md || fail "README lost the live demo link"
 
 # eval table pins (regenerate with node scripts/evaluate.mjs)
