@@ -1,0 +1,14 @@
+dist/
+node_modules/
+docs/app.js
+docs/app.js.map
+docs/worker.js
+docs/worker.js.map
+.env*
+*.keystore
+*.jks
+local.properties
+*service-account*.json
+.security-reports/
+.cache/
+.probe*.mjs

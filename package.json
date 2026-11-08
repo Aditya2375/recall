@@ -1,0 +1,23 @@
+{
+  "name": "recall",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hybrid search engine - BM25, vector ANN and rank fusion, running entirely in the browser",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test \"dist/tests/**/*.test.js\"",
+    "web": "node scripts/build-web.mjs",
+    "check-docs": "sh scripts/check-docs.sh"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.2"
+  }
+}
