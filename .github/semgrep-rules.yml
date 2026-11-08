@@ -1,0 +1,24 @@
+rules:
+  - id: no-inner-html
+    patterns:
+      - pattern-either:
+          - pattern: $X.innerHTML = $Y
+          - pattern: $X.outerHTML = $Y
+          - pattern: $X.insertAdjacentHTML(...)
+          - pattern: document.write(...)
+    message: Untrusted text must render via textContent, never as HTML.
+    severity: ERROR
+    languages: [typescript, javascript]
+  - id: no-eval
+    patterns:
+      - pattern-either:
+          - pattern: eval(...)
+          - pattern: new Function(...)
+    message: eval and new Function are forbidden.
+    severity: ERROR
+    languages: [typescript, javascript]
+  - id: no-unsafe-url-fetch
+    pattern: fetch($USER_INPUT)
+    message: All fetches use fixed relative or allow-listed URLs; check this call.
+    severity: WARNING
+    languages: [typescript, javascript]

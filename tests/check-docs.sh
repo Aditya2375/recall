@@ -6,8 +6,8 @@ cd "$(dirname "$0")/.."
 fail() { echo "check-docs: $1" >&2; exit 1; }
 
 UNIT=$(npm test 2>&1 | grep -o '^# pass [0-9]*' | grep -o '[0-9]*')
-[ "$UNIT" = "68" ] || fail "unit tests: README says 68, runner says $UNIT"
-grep -q "68 unit tests" README.md || fail "README no longer says 68 unit tests"
+[ "$UNIT" = "73" ] || fail "unit tests: README says 73, runner says $UNIT"
+grep -q "73 unit tests" README.md || fail "README no longer says 73 unit tests"
 grep -q "8 end-to-end checks" README.md || fail "README lost the smoke check count"
 grep -q "aditya2375.github.io/recall" README.md || fail "README lost the live demo link"
 
@@ -51,8 +51,10 @@ grep -q "Content-Security-Policy" docs/index.html || fail "docs/index.html lost 
 grep -q "maxDocs: 500" src/core/corpus.ts || fail "corpus doc limit changed"
 grep -q "maxTotalChars: 2_000_000" src/core/corpus.ts || fail "corpus size limit changed"
 
-# no stray AI/tooling mentions anywhere public-facing
+# no stray AI/tooling mentions anywhere public-facing. Authored text only:
+# minified bundles, base64 artifacts and wasm can contain look-alike bytes.
 ! grep -rli --exclude=check-docs.sh "claude\|anthropic\|openai\|chatgpt\|copilot\|gpt-4\|llm" \
-  README.md SECURITY_REVIEW.md docs/ src/ scripts/ tests/ data/ .github/ package.json 2>/dev/null \
+  README.md SECURITY_REVIEW.md src/ scripts/ tests/ data/corpus data/eval \
+  .github/ package.json docs/index.html docs/style.css \
   || fail "tooling mention found"
 echo "check-docs ok"

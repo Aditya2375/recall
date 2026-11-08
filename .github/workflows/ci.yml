@@ -1,0 +1,61 @@
+name: ci
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020   # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: sh tests/check-docs.sh
+  browser-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020   # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci && npm run build
+      - name: rebuild the demo strictly from source
+        # deleting docs/ first proves the workflow never leans on the
+        # committed artifact: the build must regenerate it wholesale
+        run: |
+          rm -rf docs/
+          node scripts/build-web.mjs
+      - run: node tests/browser-smoke.mjs
+      - name: committed demo matches a fresh build
+        run: git diff --exit-code --stat docs/
+  verify-precomputed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020   # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci && npm run build
+      - name: regenerate bundled model artifacts and compare
+        run: node scripts/verify-precomputed.mjs
+  supply-chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020   # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7   # v2
+        env:
+          GITLEAKS_ENABLE_COMMENTS: false
+      - name: semgrep (local rules, no account)
+        run: pipx run semgrep --config .github/semgrep-rules.yml --error src/ scripts/
