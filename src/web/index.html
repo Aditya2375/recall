@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; worker-src 'self'; connect-src 'self' https://huggingface.co https://cdn-lfs.huggingface.co https://cdn-lfs-us-1.huggingface.co https://cdn-lfs-eu-1.huggingface.co https://cas-bridge.xethub.hf.co; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>recall - hybrid search in your browser</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <div class="brand">recall</div>
+  <p class="tagline">BM25, vector search and rank fusion over your own documents - entirely in this tab.</p>
+  <nav id="tabs" aria-label="Views">
+    <button data-tab="search" class="active">Search</button>
+    <button data-tab="compare">Compare</button>
+    <button data-tab="evaluate">Evaluate</button>
+    <button data-tab="corpus">Corpus</button>
+    <button data-tab="method">Method</button>
+  </nav>
+  <div id="model-pill" class="pill">instant mode: precomputed vectors</div>
+</header>
+
+<main>
+  <section id="tab-search" class="tab active">
+    <div class="query-row">
+      <input id="query" type="search" autocomplete="off" spellcheck="false"
+             placeholder="ask the corpus something - e.g. why do stars twinkle?">
+      <button id="run">Search</button>
+    </div>
+    <div class="controls" id="mode-controls">
+      <label><input type="radio" name="mode" value="bm25"> BM25 only</label>
+      <label><input type="radio" name="mode" value="dense"> Dense only</label>
+      <label><input type="radio" name="mode" value="hybrid" checked> Hybrid (RRF)</label>
+      <label><input type="radio" name="mode" value="linear"> Hybrid (linear)</label>
+      <label><input type="checkbox" id="rerank"> neural rerank</label>
+      <label class="corpus-picker">corpus <select id="corpus-picker"></select></label>
+    </div>
+    <div id="progress" class="progress hidden"><div id="progress-bar"></div><span id="progress-label"></span></div>
+    <div id="answer" class="answer hidden"></div>
+    <div id="results-meta" class="meta"></div>
+    <ol id="results" class="results"></ol>
+  </section>
+
+  <section id="tab-compare" class="tab">
+    <p class="hint">One query, four rankings side by side. Filled marks are graded-relevant documents when the query comes from the eval set.</p>
+    <div class="query-row">
+      <input id="compare-query" type="search" autocomplete="off" spellcheck="false" placeholder="run the same query through every configuration">
+      <button id="compare-run">Compare</button>
+    </div>
+    <div id="compare-grid" class="compare-grid"></div>
+  </section>
+
+  <section id="tab-evaluate" class="tab">
+    <p class="hint">The bundled query set (40 queries, graded relevance) run through every configuration. Numbers here are produced by the same runner as the README table. Embeddings are precomputed with the pinned model; latencies cover scoring and fusion only.</p>
+    <button id="eval-run">Run evaluation</button>
+    <div id="eval-progress" class="progress hidden"><div id="eval-progress-bar"></div><span id="eval-progress-label"></span></div>
+    <div id="eval-table"></div>
+    <h3>HNSW recall vs <code>ef</code></h3>
+    <p class="hint">Approximate search measured against exact search on the eval queries: what you trade for speed.</p>
+    <button id="ef-run">Measure</button>
+    <canvas id="ef-chart" width="640" height="320"></canvas>
+  </section>
+
+  <section id="tab-corpus" class="tab">
+    <div id="corpus-stats" class="stats"></div>
+    <div class="corpus-actions">
+      <button id="upload-btn">Upload .txt / .md / corpus JSON</button>
+      <input id="upload-input" type="file" multiple accept=".txt,.md,.json" class="hidden">
+      <button id="export-btn">Export corpus JSON</button>
+    </div>
+    <div id="doc-list" class="doc-list"></div>
+    <article id="doc-view" class="doc-view"></article>
+  </section>
+
+  <section id="tab-method" class="tab method">
+    <h3>What this is</h3>
+    <p>A complete hybrid retrieval engine: a hand-written BM25 ranker, a flat cosine index and an HNSW graph over transformer embeddings, reciprocal-rank and linear fusion, an optional cross-encoder rerank stage, and an extractive answer composer that only ever quotes the corpus verbatim.</p>
+    <h3>What runs where</h3>
+    <p>Everything runs in this tab, in a Web Worker. The bundled <em>night-sky</em> corpus (50 articles) and its 40-query graded eval set are served with precomputed vectors from <code>bge-small-en-v1.5</code> (pinned revision), so the demo is instant and its numbers are reproducible - CI regenerates those vectors and fails if they drift. The real model loads on demand, only when you type a custom query or index your own documents. The neural reranker (<code>ms-marco-MiniLM-L-6-v2</code>, raw logits) is a separate on-demand download. Models come from the Hugging Face CDN over HTTPS and are cached by the browser.</p>
+    <h3>Honest limits</h3>
+    <ul>
+      <li>The eval set is small (40 queries) and hand-labeled; treat the numbers as a demonstration of method, not a benchmark claim.</li>
+      <li>Hybrid fusion does not win every metric on every corpus - the Eval view shows where dense recall beats fused recall here.</li>
+      <li>Answers are extractive by design: no generative model, no invented text, but also no synthesis beyond quoting.</li>
+      <li>ONNX Runtime runs single-threaded here (GitHub Pages cannot send cross-origin isolation headers), so live embedding is slower than it could be.</li>
+      <li>Your uploaded documents never leave the tab; nothing is logged or sent anywhere.</li>
+    </ul>
+    <h3>Source</h3>
+    <p><a href="https://github.com/Aditya2375/recall">github.com/Aditya2375/recall</a></p>
+  </section>
+</main>
+
+<footer>
+  <span>recall - no server, no tracking, no keys. <a href="https://github.com/Aditya2375/recall">source</a></span>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>

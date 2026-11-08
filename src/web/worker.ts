@@ -22,6 +22,7 @@ import { validateEvalSet, runEvaluation, type EvalSet } from '../core/evaluate.j
 import { loadPrecomputed, PrecomputedEmbedder, PrecomputedReranker } from '../core/precomputed.js';
 import { Retriever, type QueryOptions } from '../core/pipeline.js';
 import type { Chunk } from '../core/chunk.js';
+import { composeAnswer, type AnswerInput } from '../core/answer.js';
 import { CrossEncoderReranker, TransformersEmbedder } from './models.js';
 
 interface CorpusState {
@@ -53,7 +54,7 @@ function serializableChunks(retriever: Retriever): Chunk[] {
   return retriever.chunks.map((c) => ({ ...c }));
 }
 
-async function handleInit(msg: { corpus: unknown; evalSet: unknown; precomputed: unknown }): Promise<void> {
+async function handleInit(id: number, msg: { corpus: unknown; evalSet: unknown; precomputed: unknown }): Promise<void> {
   const corpus = validateCorpus(msg.corpus);
   const evalSet = validateEvalSet(msg.evalSet, new Set(corpus.docs.map((d) => d.id)));
   const pre = loadPrecomputed(msg.precomputed);
@@ -67,25 +68,27 @@ async function handleInit(msg: { corpus: unknown; evalSet: unknown; precomputed:
     reranker: new PrecomputedReranker(pre, corpus, evalSet),
     evalSet,
   });
-  post({ kind: 'ready', corpusId: corpus.name, stats: statsOf(states.get(corpus.name)!), chunks: serializableChunks(retriever), docs: corpus.docs });
+  post({ kind: 'ready', id, corpusId: corpus.name, stats: statsOf(states.get(corpus.name)!), chunks: serializableChunks(retriever), docs: corpus.docs });
 }
 
 async function handleQuery(id: number, msg: { text: string; options: QueryOptions; corpusId: string }): Promise<void> {
   const state = states.get(msg.corpusId);
   if (state === undefined) throw new Error(`unknown corpus "${msg.corpusId}"`);
-  const needsLiveDense = msg.options.dense !== null && state.precomputed === null;
+  const modelsUsed: string[] = [];
   let embedder = state.precomputed ?? undefined;
   if (msg.options.dense !== null) {
-    if (needsLiveDense || state.precomputed === null) {
+    if (state.precomputed === null) {
       await liveEmbedder.load((f) => post({ kind: 'progress', id, stage: 'loading embedding model', fraction: f }));
       embedder = liveEmbedder;
+      modelsUsed.push('embed');
     } else {
       // Precomputed covers bundled queries; anything else needs the live model.
       try {
-        await state.precomputed!.embed([msg.text]);
+        await state.precomputed.embed([msg.text]);
       } catch {
         await liveEmbedder.load((f) => post({ kind: 'progress', id, stage: 'loading embedding model', fraction: f }));
-        embedder = new LiveQueryEmbedder(state.precomputed!, liveEmbedder);
+        embedder = new LiveQueryEmbedder(state.precomputed, liveEmbedder);
+        modelsUsed.push('embed');
       }
     }
   }
@@ -94,10 +97,24 @@ async function handleQuery(id: number, msg: { text: string; options: QueryOption
     if (state.reranker === null || !(await precomputedRerankCovers(state, msg.text))) {
       await liveReranker.load((f) => post({ kind: 'progress', id, stage: 'loading reranker model', fraction: f }));
       reranker = liveReranker;
+      modelsUsed.push('rerank');
     }
   }
   const result = await state.retriever.query(msg.text, msg.options, embedder, reranker);
-  post({ kind: 'result', id, result });
+  const topChunks: AnswerInput[] = result.docs.slice(0, 3).map((doc) => ({
+    chunkId: doc.chunkId,
+    docId: doc.docId,
+    text: state.retriever.chunkById(doc.chunkId)!.text,
+    citation: doc.rank,
+  }));
+  const answer = composeAnswer(msg.text, topChunks, state.retriever.bm25Index);
+  post({ kind: 'result', id, result: { ...result, answer }, modelsUsed });
+}
+
+function handleExplain(id: number, msg: { corpusId: string; chunkId: string; query: string }): void {
+  const state = states.get(msg.corpusId);
+  if (state === undefined) throw new Error(`unknown corpus "${msg.corpusId}"`);
+  post({ kind: 'explanation', id, explanation: state.retriever.bm25Index.explain(msg.query, msg.chunkId) });
 }
 
 async function precomputedRerankCovers(state: CorpusState, text: string): Promise<boolean> {
@@ -203,7 +220,7 @@ self.onmessage = (event: MessageEvent) => {
   const run = async () => {
     switch (msg.kind) {
       case 'init':
-        return handleInit(msg as never);
+        return handleInit(id, msg as never);
       case 'query':
         return handleQuery(id, msg as never);
       case 'eval':
@@ -219,6 +236,9 @@ self.onmessage = (event: MessageEvent) => {
       }
       case 'indexCorpus':
         return handleIndexCorpus(id, msg['corpus']);
+      case 'explain':
+        handleExplain(id, msg as never);
+        return;
       default:
         throw new Error(`unknown message kind "${msg.kind}"`);
     }

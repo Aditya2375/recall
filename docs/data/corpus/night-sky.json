@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "name": "night-sky",
+  "docs": [
+    {
+      "id": "why-stars-twinkle",
+      "title": "Why stars twinkle",
+      "text": "# Why stars twinkle\n\nStars twinkle because their light passes through Earth's turbulent atmosphere on the way to your eye. Pockets of air at different temperatures bend light by slightly different amounts, and these pockets drift and change several times per second. The star's apparent position and brightness jitter as a result. Astronomers call this effect atmospheric seeing.\n\nA star is so far away that it is effectively a point source, so the whole point dances at once. The technical name for twinkling is scintillation. It is worst near the horizon, where starlight crosses the thickest slab of air, and much smaller overhead."
+    },
+    {
+      "id": "planets-steady-light",
+      "title": "Why planets do not twinkle",
+      "text": "# Why planets do not twinkle\n\nPlanets usually shine with a steady light while stars twinkle. Although a planet looks like a star to the naked eye, it is actually a tiny disk in a telescope, not a true point. Each point on that disk twinkles independently, and the eye averages thousands of these independent flickers into a stable glow.\n\nThis gives observers a quick field test: a bright steady point low in the west after sunset is almost always a planet, while a bright point that flickers and flashes colors is a star. In very rough air, even planets can shimmer a little."
+    },
+    {
+      "id": "north-star",
+      "title": "Polaris, the North Star",
+      "text": "# Polaris, the North Star\n\nPolaris is the star that sits almost exactly above Earth's north rotational pole, which is why everyone calls it the North Star. While the rest of the sky appears to wheel around it through the night, Polaris barely moves. Its altitude above the horizon equals the observer's latitude, a fact sailors used for navigation for centuries.\n\nPolaris is not especially bright; it is only about the 50th brightest star. It is famous because of where it sits, not how it shines. It is a yellow supergiant about 430 light years away, and a Cepheid variable whose brightness pulses slightly."
+    },
+    {
+      "id": "finding-polaris",
+      "title": "Finding Polaris with the Big Dipper",
+      "text": "# Finding Polaris with the Big Dipper\n\nThe easiest way to find the North Star is to start with the Big Dipper. Locate the two stars at the outer end of the Dipper's bowl, Merak and Dubhe, known as the pointer stars. Draw an imaginary line from Merak through Dubhe and extend it about five times the distance between them. The line lands on Polaris.\n\nPolaris is the end of the Little Dipper's handle, in the constellation Ursa Minor. Once you have Polaris, you have true north to within about a degree, and the rest of the northern sky becomes easy to orient."
+    },
+    {
+      "id": "big-dipper",
+      "title": "The Big Dipper",
+      "text": "# The Big Dipper\n\nThe Big Dipper is the most recognized star pattern in the northern sky: seven bright stars forming a bowl and a handle. It is an asterism, not a constellation in the formal sense; the official constellation it belongs to is Ursa Major, the Great Bear.\n\nThe two stars at the end of the bowl point to Polaris. The middle star of the handle, Mizar, has a faint companion called Alcor that sharp-eyed observers can split without optical aid, a traditional test of eyesight and sky darkness. Five of the Dipper's stars share a common origin and move together through space as the Ursa Major moving group."
+    },
+    {
+      "id": "orion",
+      "title": "Orion, the Hunter",
+      "text": "# Orion, the Hunter\n\nOrion is the most striking constellation of winter evenings in the northern hemisphere. Three bright stars in a short straight row form the Hunter's belt. Above them sits the red supergiant Betelgeuse marking one shoulder, and below them the blue-white supergiant Rigel marks one knee.\n\nHanging from the belt is the sword, whose middle star is not a star at all but the Orion Nebula, a glowing cloud where new stars are being born. Even binoculars show it as a fuzzy patch. Orion straddles the celestial equator, so both hemispheres can see it."
+    },
+    {
+      "id": "betelgeuse",
+      "title": "Betelgeuse",
+      "text": "# Betelgeuse\n\nBetelgeuse is the orange-red supergiant marking Orion's shoulder. It is enormous: placed at the center of the solar system, its surface would reach past the orbit of Mars. It is also old and unstable, and it will end its life as a supernova sometime in the next hundred thousand years.\n\nIn late 2019 and early 2020 Betelgeuse faded dramatically, an event astronomers called the Great Dimming. Some speculated an explosion was near. Careful study showed the dimming came from a cloud of dust the star had ejected, combined with a cool patch on its surface. It recovered within months."
+    },
+    {
+      "id": "red-giants",
+      "title": "Red giants",
+      "text": "# Red giants\n\nWhen a star like the Sun runs out of hydrogen in its core, it does not simply switch off. The core contracts and heats while the outer layers expand and cool, swelling the star into a red giant dozens of times wider than before. The Sun will reach this stage in about five billion years.\n\nRed giants are cool at the surface, around 3,000 to 4,000 kelvin, which gives them their color, but their huge area makes them luminous. Aldebaran in Taurus and Arcturus in Bootes are familiar naked-eye examples. A red giant eventually sheds its outer layers, leaving the exposed core behind as a white dwarf."
+    },
+    {
+      "id": "main-sequence",
+      "title": "The main sequence",
+      "text": "# The main sequence\n\nMost stars, including the Sun, spend most of their lives in a stable phase called the main sequence. During this phase the star fuses hydrogen into helium in its core, and the outward pressure from that fusion exactly balances the inward pull of gravity.\n\nA star's position on the main sequence is set almost entirely by its mass. Heavy stars burn hot, blue and fast, and exhaust their fuel in millions of years. Small red dwarfs burn so slowly that they can shine for trillions of years, far longer than the current age of the universe."
+    },
+    {
+      "id": "sun",
+      "title": "The Sun",
+      "text": "# The Sun\n\nThe Sun is an ordinary yellow dwarf star about 4.6 billion years old, roughly halfway through its main sequence life. It contains 99.8 percent of the solar system's mass. Its core fuses about 600 million tonnes of hydrogen every second, converting 4 million tonnes of that into pure energy.\n\nSunlight takes about 8 minutes and 20 seconds to reach Earth. The visible surface, the photosphere, sits near 5,500 degrees Celsius, while the core reaches about 15 million degrees. The Sun's activity rises and falls in an 11-year cycle of sunspots, flares and eruptions."
+    },
+    {
+      "id": "solar-flares",
+      "title": "Solar flares and coronal mass ejections",
+      "text": "# Solar flares and coronal mass ejections\n\nA solar flare is a sudden release of magnetic energy in the Sun's atmosphere, flashing across the electromagnetic spectrum from radio waves to X-rays. A coronal mass ejection is a different beast: a billion-tonne bubble of magnetized plasma hurled into space at hundreds of kilometers per second.\n\nWhen a coronal mass ejection strikes Earth's magnetic field it can trigger a geomagnetic storm. Strong storms produce bright aurorae far from the poles, disturb radio communications and GPS, and in extreme cases stress power grids. The largest on record, the Carrington Event of 1859, set telegraph systems sparking."
+    },
+    {
+      "id": "aurora",
+      "title": "The aurora",
+      "text": "# The aurora\n\nThe northern and southern lights appear when charged particles from the Sun, funneled by Earth's magnetic field toward the poles, slam into oxygen and nitrogen high in the atmosphere. The gases absorb the energy and re-emit it as light.\n\nOxygen produces the common green glow at around 120 kilometers altitude and a rarer deep red higher up. Nitrogen contributes purples and pinks along the lower edges of curtains. The best displays follow solar eruptions, and the best viewing is under dark, clear skies within the auroral ovals, far from city light."
+    },
+    {
+      "id": "moon-phases",
+      "title": "Phases of the Moon",
+      "text": "# Phases of the Moon\n\nThe Moon shines only by reflected sunlight, and its phases are simply the changing fraction of its sunlit half that we can see from Earth. When the Moon sits between Earth and the Sun, the lit side faces away from us: new moon. When Earth sits between the Sun and the Moon, the face we see is fully lit: full moon.\n\nThe full cycle takes about 29.5 days, the synodic month, which is the root of the word month. A common misconception holds that Earth's shadow causes the phases. It does not; the shadow only enters the picture during a lunar eclipse."
+    },
+    {
+      "id": "lunar-eclipse",
+      "title": "Lunar eclipses",
+      "text": "# Lunar eclipses\n\nA lunar eclipse happens when the full Moon passes through Earth's shadow. It can only occur at full moon, and only when the Moon's tilted orbit carries it through the shadow rather than above or below it.\n\nDuring totality the Moon does not vanish. Sunlight filtered and bent through Earth's atmosphere falls on the lunar surface, painting it copper red or dark brown, the exact color depending on the state of Earth's atmosphere at the time. Every sunrise and sunset on Earth is projected onto the Moon at once. A total lunar eclipse is safe to watch with the naked eye and is visible from an entire hemisphere at once."
+    },
+    {
+      "id": "solar-eclipse",
+      "title": "Solar eclipses",
+      "text": "# Solar eclipses\n\nA solar eclipse happens when the new Moon passes directly between the Sun and Earth and the Moon's shadow sweeps across the planet's surface. By a striking coincidence, the Sun is about 400 times wider than the Moon and about 400 times farther away, so the two appear almost exactly the same size in our sky.\n\nInside the narrow path of totality, day turns to twilight for a few minutes and the Sun's ghostly outer atmosphere, the corona, becomes visible. Totality is the only phase safe to watch with unprotected eyes. At every partial stage, you need certified eclipse glasses or an indirect projection method. Regular sunglasses are not safe."
+    },
+    {
+      "id": "tides",
+      "title": "The Moon and the tides",
+      "text": "# The Moon and the tides\n\nOcean tides are raised mainly by the Moon's gravity. The Moon pulls hardest on the water closest to it and weakest on the solid Earth farthest away, and this difference in pull stretches the oceans into two bulges, one facing the Moon and one on the opposite side. As Earth rotates through the bulges, most coasts see two high tides and two low tides a day.\n\nThe Sun contributes too. When Sun, Earth and Moon line up at new or full moon, the tides reinforce each other into larger spring tides. At the quarter moons they partly cancel, producing smaller neap tides."
+    },
+    {
+      "id": "milky-way",
+      "title": "The Milky Way",
+      "text": "# The Milky Way\n\nThe Milky Way is our home galaxy, a barred spiral of roughly 100 to 400 billion stars spanning about 100,000 light years. The Sun sits in one of its spiral arms, about 26,000 light years from the center, and takes around 230 million years to complete one orbit.\n\nOn a dark night you can see the galaxy's disk as a pale band of light arching across the sky; the word galaxy comes from the Greek for milk. The dark rifts in that band are not empty space but lanes of interstellar dust blocking the starlight behind them. At the galaxy's core sits a supermassive black hole of four million solar masses, known as Sagittarius A*."
+    },
+    {
+      "id": "andromeda",
+      "title": "The Andromeda Galaxy",
+      "text": "# The Andromeda Galaxy\n\nThe Andromeda Galaxy, cataloged as M31, is the nearest large spiral galaxy to our own, about 2.5 million light years away. It holds perhaps a trillion stars, more than the Milky Way, and spans over 150,000 light years.\n\nUnder a dark sky Andromeda is the most distant object visible to the naked eye: a faint elongated smudge in the constellation Andromeda. The light you see left the galaxy when early humans walked Earth. Andromeda and the Milky Way are drifting toward each other and will begin merging in about four billion years, eventually forming one large elliptical galaxy."
+    },
+    {
+      "id": "light-year",
+      "title": "The light-year",
+      "text": "# The light-year\n\nA light-year is a unit of distance, not time: the distance light travels in one year, about 9.46 trillion kilometers. Light moves at 299,792 kilometers per second, fast enough to circle Earth more than seven times in a second.\n\nThe unit makes interstellar distances writable. The nearest star beyond the Sun, Proxima Centauri, lies 4.25 light-years away; the center of the Milky Way about 26,000. Because light takes time to travel, distance in light-years is also a look-back time: seeing a galaxy 2.5 million light-years away means seeing it as it was 2.5 million years ago."
+    },
+    {
+      "id": "parsec",
+      "title": "The parsec",
+      "text": "# The parsec\n\nThe parsec is the professional astronomer's unit of distance, equal to about 3.26 light-years. Its name compresses its definition: it is the distance at which one astronomical unit, the average Earth-Sun distance, spans one arcsecond of angle through annual parallax.\n\nThe unit falls directly out of geometry rather than being chosen for convenience, which is why research papers prefer it over the light-year. The nearest stars are just over one parsec away. Kiloparsecs measure distances across a galaxy; megaparsecs measure the gulfs between galaxy clusters."
+    },
+    {
+      "id": "stellar-parallax",
+      "title": "Measuring distance with stellar parallax",
+      "text": "# Measuring distance with stellar parallax\n\nHold a finger at arm's length and blink between your eyes: the finger jumps against the background. Stellar parallax is the same trick played with Earth's orbit. A nearby star shifts slightly against distant background stars as Earth moves from one side of the Sun to the other over six months.\n\nThe shift is tiny: even the nearest star moves by less than one arcsecond, the width of a coin seen from kilometers away. Measuring such angles from the ground limited parallax to a few hundred light-years. Space missions changed that: the Gaia satellite has measured parallaxes for well over a billion stars, mapping a huge three-dimensional volume of the Milky Way."
+    },
+    {
+      "id": "hertzsprung-russell",
+      "title": "The Hertzsprung-Russell diagram",
+      "text": "# The Hertzsprung-Russell diagram\n\nPlot stars by their true brightness against their surface temperature and order emerges from chaos. This chart, the Hertzsprung-Russell diagram, is the single most useful picture in stellar astronomy.\n\nMost stars fall along a diagonal band, the main sequence, running from hot bright blue stars to cool faint red ones. Red giants occupy the upper right: cool but enormous, therefore luminous. White dwarfs sit in the lower left: hot but tiny, therefore faint. A star's position on the diagram tells you its mass, its life stage and roughly how long it has left."
+    },
+    {
+      "id": "star-colors",
+      "title": "Why stars have different colors",
+      "text": "# Why stars have different colors\n\nA star's color is a direct readout of its surface temperature. Stars behave nearly like ideal thermal radiators: the hotter the surface, the bluer the light it emits. The hottest stars, above 30,000 kelvin, burn blue-white; cool stars near 3,000 kelvin glow orange-red.\n\nBetelgeuse's orange tint and Rigel's blue-white glare, both visible in Orion at the same time, are a temperature contrast you can see unaided. The yellow Sun sits between the extremes at about 5,800 kelvin. Astronomers formalize color as the difference in brightness measured through two standard filters, the B-V color index."
+    },
+    {
+      "id": "doppler-redshift",
+      "title": "Redshift and the expanding universe",
+      "text": "# Redshift and the expanding universe\n\nLight from a source moving away from us is stretched to longer, redder wavelengths, just as the siren of a receding ambulance drops in pitch. This is the Doppler effect applied to light, and the stretching is called redshift.\n\nIn the 1920s, observations showed that nearly every galaxy is redshifted, and the farther the galaxy, the greater the shift. The interpretation: space itself is expanding, carrying galaxies apart. Edwin Hubble quantified the relation, now called the Hubble law. Redshift is how astronomers read both the distance to remote galaxies and the expansion history of the universe."
+    },
+    {
+      "id": "hubble-deep-field",
+      "title": "The Hubble Deep Field",
+      "text": "# The Hubble Deep Field\n\nIn 1995 the Hubble Space Telescope stared at a patch of sky near the Big Dipper so small and empty-looking that it seemed almost perverse: about the size of a grain of sand held at arm's length. Over ten days, 342 separate exposures were stacked into a single image.\n\nThe result, the Hubble Deep Field, revealed around 3,000 galaxies in that one dark speck, some seen as they were more than ten billion years ago. The image transformed estimates of how many galaxies the universe holds and became one of the most scientifically productive observations ever made. Later deep fields repeated the idea with longer exposures and infrared eyes."
+    },
+    {
+      "id": "james-webb",
+      "title": "The James Webb Space Telescope",
+      "text": "# The James Webb Space Telescope\n\nThe James Webb Space Telescope, launched in December 2021, is the largest telescope ever sent to space. Its 6.5-meter primary mirror is made of 18 gold-coated hexagonal segments that unfolded in flight, and a tennis-court-sized sunshield keeps the instruments colder than 50 kelvin.\n\nWebb observes in infrared light, which lets it do two things Hubble cannot: see through dust clouds that block visible light, and catch light from the earliest galaxies, stretched into the infrared by the expansion of the universe. It orbits the second Lagrange point, 1.5 million kilometers from Earth, four times farther than the Moon."
+    },
+    {
+      "id": "hubble-telescope",
+      "title": "The Hubble Space Telescope",
+      "text": "# The Hubble Space Telescope\n\nThe Hubble Space Telescope has circled Earth since 1990, observing from above the blurring, absorbing atmosphere. Its 2.4-meter mirror records visible and ultraviolet light with a sharpness ground telescopes of its era could not match.\n\nIts early years nearly ended in embarrassment: the mirror had been ground to a subtly wrong shape, blurring every image. Astronauts fitted corrective optics in 1993, and the repaired telescope went on to help pin down the age of the universe, confirm supermassive black holes in galaxy cores, and watch atmospheres of planets around other stars. Its images, from the Pillars of Creation to the Deep Field, defined the public's picture of the cosmos."
+    },
+    {
+      "id": "radio-telescopes",
+      "title": "Radio telescopes",
+      "text": "# Radio telescopes\n\nRadio telescopes collect the long-wavelength light that visible-light instruments miss. Because radio waves are millions of times longer than light waves, a single dish must be enormous to see fine detail: the late Arecibo dish filled a 305-meter sinkhole in Puerto Rico, and China's FAST spans 500 meters.\n\nA trick called interferometry beats the size limit. By combining signals from dishes spread across continents, arrays like the Very Long Baseline Array sharpen resolution to the equivalent of a dish the size of Earth. The Event Horizon Telescope used exactly this principle to image the shadow of a black hole. Radio observations revealed pulsars, the cosmic microwave background's fine structure and complex molecules in interstellar clouds."
+    },
+    {
+      "id": "gravity",
+      "title": "Gravity, from Newton to Einstein",
+      "text": "# Gravity, from Newton to Einstein\n\nNewton described gravity as a force of attraction between masses, weakening with the square of the distance. His law predicts the fall of an apple and the orbit of the Moon with one equation, and it is still accurate enough to plan most space missions.\n\nEinstein reframed gravity not as a force but as the curvature of spacetime around mass and energy. Mass tells spacetime how to curve; curved spacetime tells matter how to move. General relativity explains effects Newton's theory cannot, such as the drift of Mercury's orbit and the bending of starlight near the Sun, and it predicts black holes and gravitational waves, both since observed."
+    },
+    {
+      "id": "black-holes",
+      "title": "Black holes",
+      "text": "# Black holes\n\nA black hole forms when matter is squeezed into so small a volume that gravity overwhelms every opposing force and nothing, not even light, can escape. The boundary of no return is the event horizon. Stellar-mass black holes are born when massive stars collapse at the end of their lives; supermassive ones, millions to billions of times heavier, anchor the centers of galaxies.\n\nBlack holes are observed through what they do to their surroundings: stars orbiting something invisible, gas heated to X-ray brilliance as it spirals in, light bent around the horizon. The Event Horizon Telescope produced the first direct images of a black hole's shadow, and gravitational-wave detectors now routinely hear the ripples from colliding pairs."
+    },
+    {
+      "id": "neutron-stars",
+      "title": "Neutron stars and pulsars",
+      "text": "# Neutron stars and pulsars\n\nWhen a massive star explodes, its crushed core can survive as a neutron star: more mass than the Sun packed into a ball about 20 kilometers wide. A teaspoon of its material would weigh billions of tonnes on Earth. The matter inside is so dense that atoms themselves are squeezed out of existence into a sea of neutrons.\n\nMany neutron stars spin rapidly and sweep beams of radio waves across space like lighthouse beams. Wherever a beam crosses Earth, we record a regular pulse, and the source is called a pulsar. The fastest spin hundreds of times per second with a regularity that rivals atomic clocks, which lets astronomers use them as precision tools for testing gravity."
+    },
+    {
+      "id": "supernovae",
+      "title": "Supernovae",
+      "text": "# Supernovae\n\nA supernova is the violent death of a star, bright enough at its peak to outshine an entire galaxy. They come in two main varieties. A Type Ia supernova ignites when a white dwarf steals or merges its way past a critical mass and detonates completely, leaving nothing behind. A core-collapse supernova ends the life of a massive star when its core, out of fuel, implodes in about a second and the infalling material rebounds in a titanic blast.\n\nSupernovae forge and scatter most of the heavy elements: the calcium in bones and the iron in blood were made in such explosions. Because Type Ia events reach a known peak brightness, they serve as standard candles, and measurements of distant ones revealed that the universe's expansion is accelerating."
+    },
+    {
+      "id": "exoplanets",
+      "title": "Finding exoplanets",
+      "text": "# Finding exoplanets\n\nPlanets around other stars are far too faint to see next to their dazzling suns, so nearly all of the thousands known were found indirectly. The transit method watches for the tiny periodic dimming as a planet crosses its star's face. The radial velocity method measures the star's wobble as the planet's gravity tugs it, detected through shifting lines in the star's spectrum.\n\nThe first confirmed planet around a Sun-like star, 51 Pegasi b, was found in 1995. The Kepler space telescope turned transits into a harvest, proving that planets outnumber stars in the galaxy. A few young giant planets have been photographed directly by blocking out the star's light with a coronagraph."
+    },
+    {
+      "id": "habitable-zone",
+      "title": "The habitable zone",
+      "text": "# The habitable zone\n\nThe habitable zone is the band of distances around a star where an Earth-like planet could keep liquid water on its surface. Too close and water boils away; too far and it freezes. Venus and Mars bracket the edges of the Sun's zone, which Earth comfortably occupies.\n\nThe zone is a starting point, not a promise: Venus sits near its inner edge yet is a furnace under a crushing greenhouse atmosphere, while icy moons outside the zone, like Europa, may hold oceans under their crusts. Around small red dwarfs the zone lies close in, where planets also face fierce stellar flares. Atmospheric composition matters as much as distance."
+    },
+    {
+      "id": "mars",
+      "title": "Mars",
+      "text": "# Mars\n\nMars is the fourth planet from the Sun, half Earth's diameter, with a thin carbon dioxide atmosphere and a surface rusted red by iron oxide dust. It hosts the solar system's largest volcano, Olympus Mons, three times the height of Everest, and a canyon system, Valles Marineris, that would stretch across the United States.\n\nDry riverbeds, lake sediments and minerals that form only in water show that ancient Mars was warmer and wetter. Rovers have driven those ancient lakebeds hunting for signs of past life, and a helicopter, Ingenuity, proved powered flight in the thin air. Mars has two small lumpy moons, Phobos and Deimos, probably captured asteroids."
+    },
+    {
+      "id": "jupiter",
+      "title": "Jupiter",
+      "text": "# Jupiter\n\nJupiter is the giant of the solar system: eleven Earths wide and more than twice as massive as every other planet combined. It is a gas giant with no solid surface, banded by ammonia-cloud jet streams and crowned by the Great Red Spot, a storm wider than Earth that has raged for at least 190 years.\n\nIts four largest moons, Io, Europa, Ganymede and Callisto, were seen by Galileo in 1610, the first proof that not everything circles Earth. Io is the most volcanic world known. Europa hides a global saltwater ocean beneath its ice crust and is one of the most promising places to search for life. Jupiter's magnetic field is the strongest of any planet."
+    },
+    {
+      "id": "saturn-rings",
+      "title": "Saturn's rings",
+      "text": "# Saturn's rings\n\nSaturn's rings are the showpiece of the telescope sky, yet they are astonishingly thin: hundreds of thousands of kilometers across but in places only about ten meters thick. They are not solid sheets but countless separate chunks of nearly pure water ice, from dust grains to house-sized boulders, each orbiting Saturn on its own path.\n\nGaps in the rings are kept clear by the gravity of small embedded moons and by resonances with larger moons outside them. Jupiter, Uranus and Neptune have rings too, but all are dark and skimpy next to Saturn's. The rings are young by solar system standards and may be the shattered remains of an icy moon."
+    },
+    {
+      "id": "comets",
+      "title": "Comets",
+      "text": "# Comets\n\nComets are dirty snowballs, leftovers from the solar system's formation: a few kilometers of ice mixed with dust and frozen gases. Most of the time they are dark, inert and far away. Only when an orbit carries one close to the Sun does the show begin.\n\nSunlight vaporizes the ice, releasing gas and dust that sunlight and the solar wind push into two tails, one of dust, one of ionized gas, always pointing away from the Sun regardless of the comet's direction of travel. A bright comet's tail can stretch hundreds of millions of kilometers. Halley's Comet returns every 76 years or so; its debris streams give us two annual meteor showers."
+    },
+    {
+      "id": "asteroids",
+      "title": "Asteroids",
+      "text": "# Asteroids\n\nAsteroids are rocky leftovers that never grew into a planet, most of them circling the Sun in the main belt between Mars and Jupiter. They range from Ceres, nearly 1,000 kilometers across and also classed a dwarf planet, down to boulders. The belt's total mass is small, only a few percent of the Moon's.\n\nSome asteroids follow orbits that bring them near Earth. These near-Earth objects are tracked carefully, because the geological record shows what impacts can do, most famously the 10-kilometer body that ended the age of dinosaurs 66 million years ago. In 2022 the DART mission deliberately rammed a small asteroid's moon and proved that a kinetic impact can shift an orbit, a first rehearsal for planetary defense."
+    },
+    {
+      "id": "meteor-showers",
+      "title": "Meteor showers",
+      "text": "# Meteor showers\n\nA meteor is the streak of light from a grain of space dust burning up in the atmosphere; the grain itself is a meteoroid, and any piece that survives to the ground is a meteorite. Meteor showers happen when Earth plows through a debris stream left behind by a comet, and the meteors appear to radiate from one point in the sky, giving each shower its name.\n\nThe Perseids of August, from Comet Swift-Tuttle, and the Geminids of December, from the asteroid 3200 Phaethon, are the year's most reliable displays, delivering dozens of meteors an hour under dark skies. The best plan is no equipment at all: lie back after midnight, let your eyes adapt, and watch a wide swath of sky."
+    },
+    {
+      "id": "iss",
+      "title": "The International Space Station",
+      "text": "# The International Space Station\n\nThe International Space Station is the largest human-made object in orbit, a laboratory about the size of a football field assembled piece by piece since 1998. It circles Earth every 90 minutes at 400 kilometers altitude, moving at 7.7 kilometers per second, and has been continuously crewed since November 2000.\n\nYou can see it with the naked eye: a bright, steady, fast-moving point crossing the sky in a few minutes, usually around dawn or dusk when the station is sunlit but the ground is dark. It outshines every star. Sighting apps and websites predict exact passes for any location, and no telescope is needed."
+    },
+    {
+      "id": "rockets",
+      "title": "How rockets work",
+      "text": "# How rockets work\n\nA rocket needs nothing to push against. It throws mass backward, hot gas from burning propellant, and Newton's third law pushes the rocket forward. The thrust depends on how fast the exhaust leaves and how much of it leaves per second.\n\nThe hard truth of spaceflight is the rocket equation: because a rocket must lift its own fuel, reaching orbit demands that most of the vehicle be propellant, which is why rockets are mostly fuel tanks with small payloads on top. Staging helps by dropping empty tanks along the way. Modern boosters fly themselves back to landing pads or drone ships, and reusing the first stage has cut launch costs sharply."
+    },
+    {
+      "id": "satellites",
+      "title": "Satellite orbits",
+      "text": "# Satellite orbits\n\nA satellite stays up by falling: its sideways speed is so high that as gravity pulls it down, the ground curves away beneath it. Where a satellite sits depends on its job. Low Earth orbit, a few hundred kilometers up, gives sharp views of the ground and quick trips for crewed stations, but drag slowly pulls satellites down.\n\nHigher orbits trade detail for persistence. Geostationary satellites circle at 35,786 kilometers above the equator, matching Earth's rotation so each one hangs over a fixed spot, ideal for weather watches and communications relays. Navigation constellations like GPS fly in between, in medium Earth orbit. At end of life, responsible operators deorbit low satellites or raise high ones into graveyard orbits."
+    },
+    {
+      "id": "light-pollution",
+      "title": "Light pollution and dark skies",
+      "text": "# Light pollution and dark skies\n\nArtificial skyglow now hides the Milky Way from about a third of humanity, including most people in Europe and North America. Light aimed sideways and upward scatters in the atmosphere and washes out faint stars, and the problem grows every year as cheap bright LEDs spread.\n\nThe Bortle scale rates sky darkness from class 1, an excellent dark site where the galaxy casts shadows, to class 9, an inner-city sky where only a handful of stars survive. Good lighting is easy to describe: fully shielded fixtures pointed down, warm colors, and only as much light as needed. Several countries now certify dark-sky reserves where such rules protect the night."
+    },
+    {
+      "id": "telescope-buying",
+      "title": "Choosing a first telescope",
+      "text": "# Choosing a first telescope\n\nThe specification that matters most is aperture, the diameter of the main lens or mirror. Aperture sets both how much light the telescope gathers and how fine the detail it can show. Magnification, the number plastered across department-store boxes, is nearly meaningless on its own; every telescope's magnification can be changed by swapping eyepieces.\n\nFor most beginners the best first instrument is a 6- to 8-inch Dobsonian reflector: a simple tube on a wooden rocker box that puts the money into aperture instead of electronics. A sturdy mount beats a wobbly one every time, and many experienced observers advise starting with binoculars to learn the sky. The best telescope is the one that actually gets carried outside."
+    },
+    {
+      "id": "astrophotography",
+      "title": "Getting started in astrophotography",
+      "text": "# Getting started in astrophotography\n\nAstrophotography splits into two crafts with different demands. Nightscapes put the Milky Way over a landscape with a tripod, a camera and a wide lens: exposures of 10 to 25 seconds before the stars begin to trail. Deep-sky imaging photographs galaxies and nebulae through a telescope on a motorized mount that tracks the sky's rotation.\n\nFaint targets need total exposure measured in hours, gathered as many short sub-exposures and combined in stacking software, which beats camera noise far better than one long frame. The unglamorous truth is that processing matters as much as capture: calibration frames, careful stretching and noise reduction turn gray raw files into the pictures that grace magazine covers."
+    },
+    {
+      "id": "constellations",
+      "title": "Constellations",
+      "text": "# Constellations\n\nA constellation is an officially bounded region of sky, not just a picture drawn in stars. The International Astronomical Union fixed 88 of them in 1922, tiling the entire celestial sphere like countries on a map, so every object in the sky belongs to exactly one.\n\nThe stars in a constellation usually have no physical connection: they lie at wildly different distances and only appear grouped from our viewpoint. Familiar pictures like Orion or the Southern Cross are asterisms, informal patterns, as is the Big Dipper inside Ursa Major. Many constellation figures descend from Greek and Babylonian sky lore, while southern ones were named during the age of exploration."
+    },
+    {
+      "id": "zodiac",
+      "title": "The zodiac",
+      "text": "# The zodiac\n\nThe zodiac is the band of constellations lying along the ecliptic, the Sun's apparent yearly path through the sky. Because the Moon and planets also travel near the ecliptic, they always appear within these constellations, which made the band central to ancient sky watching.\n\nThere are thirteen constellations on the modern ecliptic, not twelve: the Sun also passes through Ophiuchus. Astrology's twelve equal signs no longer match the astronomical constellations, thanks to the slow wobble of Earth's axis, called precession, which has shifted the correspondence by about a full constellation since the signs were fixed two thousand years ago."
+    },
+    {
+      "id": "celestial-coordinates",
+      "title": "Celestial coordinates",
+      "text": "# Celestial coordinates\n\nAstronomers pin down positions on the sky with the equatorial coordinate system, a projection of Earth's latitude and longitude onto the celestial sphere. Right ascension plays the role of longitude, measured in hours, minutes and seconds eastward from the March equinox point. Declination plays the role of latitude, in degrees north or south of the celestial equator.\n\nWith an object's right ascension and declination, any telescope on Earth can find it, which makes these coordinates the universal address system of the sky. Because Earth's axis wobbles slowly, coordinates are quoted for a standard reference date, such as the J2000.0 epoch, and software converts them to the sky of tonight."
+    },
+    {
+      "id": "magnitude-scale",
+      "title": "The magnitude scale",
+      "text": "# The magnitude scale\n\nThe magnitude scale measures brightness, and it runs backwards: the brighter an object, the smaller its magnitude. Vega sits near zero; the faintest stars visible to the naked eye from a dark site are about magnitude 6; the Sun blazes at minus 26.7.\n\nThe scale is logarithmic, inherited from ancient eyeball rankings but formalized in the 19th century: five magnitudes correspond to exactly a factor of 100 in brightness, so one magnitude is about 2.512 times. Apparent magnitude describes how bright something looks from Earth; absolute magnitude describes how bright it would look from a standard distance of 10 parsecs, letting astronomers compare true luminosities."
+    }
+  ]
+}
