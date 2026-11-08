@@ -18,7 +18,9 @@ rules:
     severity: ERROR
     languages: [typescript, javascript]
   - id: no-unsafe-url-fetch
-    pattern: fetch($USER_INPUT)
-    message: All fetches use fixed relative or allow-listed URLs; check this call.
+    patterns:
+      - pattern: fetch($URL)
+      - pattern-not: fetch("...")
+    message: Fetches must use fixed relative or allow-listed URLs, never user-built strings.
     severity: WARNING
     languages: [typescript, javascript]
