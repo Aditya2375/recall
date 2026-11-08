@@ -53,6 +53,8 @@ export interface QueryOptions {
   efSearch?: number;
   /** Cross-encoder over the top N fused docs; 0 disables reranking. */
   rerankTop?: number;
+  /** Chunk candidates fetched from the vector index before aggregation. */
+  candidates?: number;
 }
 
 export interface LatencyBreakdown {
@@ -68,6 +70,8 @@ export interface QueryResult {
   query: string;
   mode: string;
   docs: RankedDoc[];
+  /** Fused order before any reranking: what the reranker reorders. */
+  head: Array<{ docId: string; chunkId: string }>;
   latencyMs: LatencyBreakdown;
 }
 
@@ -193,7 +197,9 @@ export class Retriever {
     const fusion = opts.fusion ?? 'rrf';
     const alpha = opts.alpha ?? 0.5;
     const rerankTop = opts.rerankTop ?? 0;
+    const candidates = opts.candidates ?? 100;
     if (!(k > 0)) throw new Error('retriever: k must be > 0');
+    if (!(candidates > 0)) throw new Error('retriever: candidates must be > 0');
     if (!(alpha >= 0 && alpha <= 1)) throw new Error('retriever: alpha must be in [0, 1]');
     if (!useLexical && denseMode === null) throw new Error('retriever: lexical and dense cannot both be off');
 
@@ -222,7 +228,7 @@ export class Retriever {
       const t2 = performance.now();
       const index = denseMode === 'hnsw' ? this.hnsw : this.flat;
       if (index === null || index === undefined) throw new Error(`retriever: no ${denseMode} index built`);
-      const hits = index.search(qvec!, Math.max(k * 4, 25), opts.efSearch ?? 50);
+      const hits = index.search(qvec!, candidates, opts.efSearch ?? 50);
       denseScores = new Map(hits.map((h) => [h.id, h.score]));
       denseAgg = aggregateChunks(hits.map((h) => h.id), denseScores, (c) => this.docOfChunk(c));
       latency.dense = performance.now() - t2;
@@ -305,7 +311,8 @@ export class Retriever {
     if (parts.length === 2) parts.push(fusion === 'rrf' ? 'rrf' : `linear-${alpha.toFixed(2)}`);
     if (rerankTop > 0) parts.push('rerank');
 
+    const head = order.slice(0, Math.max(k, rerankTop)).map((docId) => ({ docId, chunkId: bestChunkFor(docId) }));
     latency.total = performance.now() - t0;
-    return { query: queryText, mode: parts.join(' + ') || 'none', docs, latencyMs: latency };
+    return { query: queryText, mode: parts.join(' + ') || 'none', docs, head, latencyMs: latency };
   }
 }
