@@ -1,9 +1,5 @@
 dist/
 node_modules/
-docs/app.js
-docs/app.js.map
-docs/worker.js
-docs/worker.js.map
 .env*
 *.keystore
 *.jks
@@ -12,3 +8,4 @@ local.properties
 .security-reports/
 .cache/
 .probe*.mjs
+# built bundles are committed on purpose: GitHub Pages serves docs/
