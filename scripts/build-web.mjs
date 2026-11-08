@@ -31,7 +31,7 @@ await build({
 
 copyFileSync(`${root}src/web/index.html`, `${root}docs/index.html`);
 copyFileSync(`${root}src/web/style.css`, `${root}docs/style.css`);
-for (const f of ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm', 'ort-wasm-simd-threaded.jsep.mjs', 'ort-wasm-simd-threaded.jsep.wasm']) {
+for (const f of ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm']) {
   copyFileSync(`${root}node_modules/onnxruntime-web/dist/${f}`, `${root}docs/ort/${f}`);
 }
 cpSync(`${root}data/corpus`, `${root}docs/data/corpus`, { recursive: true });

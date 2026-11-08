@@ -18,6 +18,28 @@ export const QUERY_INSTRUCTION = 'Represent this sentence for searching relevant
 
 type FeatureExtractionPipeline = (texts: string[], options: Record<string, unknown>) => Promise<{ tolist: () => number[][] }>;
 
+/**
+ * Points ONNX Runtime Web at the wasm files the repo ships under docs/ort/
+ * instead of its jsdelivr CDN default, so the demo's CSP only ever talks to
+ * this site and the pinned Hugging Face hosts. Must run before the first
+ * pipeline/session is created.
+ */
+type OrtWasmEnv = { wasmPaths?: { mjs: string; wasm: string }; proxy?: boolean };
+let ortConfigured = false;
+async function configureOrt(): Promise<void> {
+  if (ortConfigured) return;
+  const { env } = await import('@huggingface/transformers');
+  const onnx = (env.backends as Record<string, unknown> | undefined)?.['onnx'] as { wasm?: OrtWasmEnv } | undefined;
+  if (onnx?.wasm) {
+    onnx.wasm.wasmPaths = {
+      mjs: './ort/ort-wasm-simd-threaded.mjs',
+      wasm: './ort/ort-wasm-simd-threaded.wasm',
+    };
+    onnx.wasm.proxy = false;
+  }
+  ortConfigured = true;
+}
+
 export class TransformersEmbedder implements Embedder {
   readonly id = `${EMBED_MODEL}@${EMBED_REVISION.slice(0, 8)}`;
   readonly dims = 384;
@@ -25,6 +47,7 @@ export class TransformersEmbedder implements Embedder {
 
   async load(onProgress?: (fraction: number) => void): Promise<void> {
     if (this.pipe !== null) return;
+    await configureOrt();
     const { pipeline } = await import('@huggingface/transformers');
     const p = await pipeline('feature-extraction', EMBED_MODEL, {
       dtype: 'q8',
@@ -60,6 +83,7 @@ export class CrossEncoderReranker implements Reranker {
 
   async load(onProgress?: (fraction: number) => void): Promise<void> {
     if (this.model !== null) return;
+    await configureOrt();
     const { AutoTokenizer, AutoModelForSequenceClassification } = await import('@huggingface/transformers');
     const progress = (info: { status?: string; progress?: number }) => {
       if (info.status === 'progress' && typeof info.progress === 'number') onProgress?.(info.progress / 100);
