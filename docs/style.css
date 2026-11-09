@@ -66,6 +66,7 @@ input[type="search"] {
   font: inherit;
 }
 input[type="search"]:focus { outline: 1px solid var(--accent); }
+input[type="search"]::placeholder { color: var(--dim); opacity: 1; }
 button {
   background: var(--panel-2);
   border: 1px solid var(--border);
@@ -94,8 +95,8 @@ button:disabled { opacity: 0.5; cursor: default; }
 .meta { color: var(--dim); font-size: 13px; font-family: var(--mono); margin: 8px 0; }
 .answer {
   background: var(--panel);
+  background: color-mix(in srgb, var(--accent-2) 5%, var(--panel));
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent-2);
   border-radius: 8px;
   padding: 14px 16px;
   margin: 12px 0;
@@ -160,7 +161,7 @@ canvas { background: var(--panel); border: 1px solid var(--border); border-radiu
 .doc-list button.active { border-color: var(--accent); }
 .doc-view { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
 .doc-view h3 { margin-top: 0; }
-.doc-view .chunk { border-left: 3px solid var(--border); padding: 4px 12px; margin: 10px 0; white-space: pre-wrap; }
+.doc-view .chunk { border-left: 1px solid var(--border); padding: 4px 12px; margin: 10px 0; white-space: pre-wrap; }
 .doc-view .chunk:hover { border-left-color: var(--accent); }
 .doc-view .chunk .cid { font-family: var(--mono); font-size: 11px; color: var(--dim); }
 .method h3 { color: var(--accent); }
